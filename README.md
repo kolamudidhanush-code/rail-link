@@ -1,53 +1,40 @@
-# 🚆 RAIL LINK — Railway Reservation & Passenger Assistance System
+# 🚆 RAIL LINK
+### Railway Reservation & Passenger Assistance System
 
-**RAIL LINK** is a web-based railway reservation demo designed to simplify the train booking experience through an intuitive interface. It provides train search, seat selection, passenger details, simulated payment, booking management, and passenger assistance features.
+A full-stack web application demo designed to simplify the railway reservation experience through train search, seat selection, passenger information, simulated payments, and booking management.
 
-The project demonstrates how a modern web application can combine a React frontend, a Node.js backend, and an SQLite database.
-
----
-
-## 📌 Table of Contents
-
-- [Overview](#-overview)
-- [Features](#-features)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Running the Application](#-running-the-application)
-- [API Endpoints](#-api-endpoints)
-- [Deployment](#-deployment)
-- [Limitations](#-limitations)
-- [Future Enhancements](#-future-enhancements)
-- [Disclaimer](#-disclaimer)
+**Built with React, Vite, Node.js, Express.js, and SQLite.**
 
 ---
 
-## 🎯 Overview
+## 📌 About the Project
 
-RAIL LINK is a college demonstration project that showcases a railway reservation workflow.
+**RAIL LINK** is an educational web development project that demonstrates the core workflow of a railway reservation system.
 
-Users can explore available trains, select seats, enter passenger information, complete a simulated payment process, and view booking information.
+The application provides a user-friendly interface for exploring train journeys, selecting seats, entering passenger details, completing a simulated payment process, and viewing booking information.
 
-The application also includes passenger assistance and profile sections.
+The project demonstrates frontend development, backend API integration, database operations, and the foundations of full-stack application deployment.
 
-**Project goal:** To demonstrate frontend development, backend API integration, database operations, and the deployment workflow of a full-stack web application.
+> **Project Type:** Full-Stack Web Development  
+> **Purpose:** College Project and Educational Demonstration  
+> **Status:** Development and Deployment in Progress
 
 ---
 
 ## ✨ Features
 
-- 🔍 **Train Search** — Search for trains using journey details.
-- 💺 **Seat Selection** — Select available seats through an interactive interface.
-- 👤 **Passenger Details** — Enter passenger information during booking.
-- 💳 **Simulated Payment** — Demonstrate the payment stage without processing real transactions.
+- 🔍 **Train Search** — Enter journey details to explore available trains.
+- 💺 **Seat Selection** — Select seats through an interactive interface.
+- 👤 **Passenger Information** — Enter passenger details during booking.
+- 💳 **Simulated Payment** — Demonstrate a payment workflow without processing real transactions.
 - 🎫 **Booking Confirmation** — Display booking details and a PNR-style reference.
-- 📋 **My Bookings** — Access booking information.
+- 📋 **My Bookings** — View booking information.
 - ❌ **Booking Cancellation** — Demonstrate cancellation functionality where supported.
 - 🆘 **Passenger Assistance** — Access passenger assistance options.
-- 👤 **User Profile** — View the profile section.
-- 🗄️ **Database Integration** — Store and retrieve booking information through the backend.
+- 👤 **Profile Section** — View the user profile interface.
+- 🗄️ **Database Integration** — Save and retrieve booking information through the backend API.
 
-*Note: Feature availability depends on the current implementation and backend configuration.*
+*Feature availability depends on the current application implementation and configuration.*
 
 ---
 
@@ -55,84 +42,102 @@ The application also includes passenger assistance and profile sections.
 
 | Technology | Purpose |
 |---|---|
-| React | User interface |
-| Vite | Frontend development and build tooling |
+| React | Frontend user interface |
+| Vite | Frontend development server and build tool |
 | JavaScript | Application logic |
 | Node.js | Backend runtime |
-| Express.js | REST API |
+| Express.js | Backend API framework |
 | SQLite | Database |
-| better-sqlite3 | SQLite database integration |
+| better-sqlite3 | SQLite integration for Node.js |
 | CORS | Cross-origin request handling |
-| GitHub | Source code management |
+| GitHub | Source code hosting and version control |
 | Vercel | Planned frontend deployment |
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Application Architecture
 
 ```text
-rail-link-demo/
-├── public/
+          USER
+           |
+           v
+    REACT FRONTEND
+       (Vite)
+           |
+           | HTTP / JSON
+           v
+    EXPRESS BACKEND
+      (Node.js)
+           |
+           v
+      SQLITE DATABASE
+```
+
+The frontend provides the user interface, the backend processes API requests, and SQLite stores booking records.
+
+For online deployment, the frontend and backend must be configured to communicate through the deployed API URL.
+
+---
+
+## 📂 Project Structure
+
+```text
+rail-link/
+│
 ├── src/
-│   ├── App.jsx
-│   └── ...
+│   └── App.jsx
+│
 ├── server/
 │   └── index.js
+│
 ├── index.html
 ├── package.json
 ├── package-lock.json
 ├── vite.config.js
 ├── .gitignore
+├── start.bat
 └── README.md
 ```
 
-*The exact files and folders may differ depending on your project configuration.*
+*The exact structure may vary as the project develops.*
 
 ---
 
 ## 🚀 Getting Started
 
+Follow these steps to run the application locally.
+
 ### Prerequisites
 
-Install the following software:
+Install:
 
-- Node.js and npm
-- Git, if using Git commands
+- [Node.js](https://nodejs.org/)
 - A modern web browser
+- Git (optional, for cloning the repository)
 
 ### 1. Clone the Repository
 
-Replace `YOUR_USERNAME` with your GitHub username.
+Replace `YOUR_GITHUB_USERNAME` with your GitHub username.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/rail-link.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/rail-link.git
 ```
 
-### 2. Open the Project Folder
+### 2. Navigate to the Project Folder
 
 ```bash
 cd rail-link
 ```
 
-### 3. Install Frontend Dependencies
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Install Backend Dependencies
+### 4. Start the Backend
 
-```bash
-npm install express better-sqlite3 cors
-```
-
----
-
-## ▶️ Running the Application
-
-### Start the Backend
-
-Open a terminal in the project root directory and run:
+Open a terminal in the project root and run:
 
 ```bash
 node server/index.js
@@ -144,89 +149,87 @@ The backend should start at:
 http://localhost:3000
 ```
 
-### Start the Frontend
+Keep this terminal open.
 
-Open a second terminal in the same project directory and run:
+### 5. Start the Frontend
+
+Open a second terminal in the project root and run:
 
 ```bash
 npm run dev
 ```
 
-Open the local address displayed in your terminal, typically:
+Open the local URL displayed by Vite. It is typically:
 
 ```text
 http://localhost:5173
 ```
 
-Vite may use another port if the default port is occupied.
+If that port is occupied, Vite may select another port.
 
-### Check Backend Health
+---
 
-Open the following endpoint in your browser:
+## 🔌 Backend API
+
+The backend currently defines these endpoints:
+
+| HTTP Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/health` | Check backend status |
+| GET | `/api/bookings` | Retrieve booking records |
+| POST | `/api/bookings` | Save a booking |
+| PATCH | `/api/bookings/:pnr/cancel` | Cancel a booking |
+
+### Health Check
+
+Open the following URL while the backend is running:
 
 ```text
 http://localhost:3000/api/health
 ```
 
-A successful response should indicate that the backend is running.
+A successful response indicates that the backend is running.
+
+### Retrieve Bookings
+
+```text
+http://localhost:3000/api/bookings
+```
+
+The response contains booking information in JSON format.
 
 ---
 
-## 🔌 API Endpoints
+## ☁️ Deployment Plan
 
-The backend provides the following endpoints in the current implementation.
+The project is being prepared for online deployment.
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Check backend status |
-| GET | `/api/bookings` | Retrieve saved bookings |
-| POST | `/api/bookings` | Create a booking |
-| PATCH | `/api/bookings/:pnr/cancel` | Cancel a booking |
+Planned deployment workflow:
 
-These endpoints require the backend to be running. The booking endpoints accept and return JSON data.
+1. Maintain the source code in GitHub.
+2. Import the GitHub repository into Vercel.
+3. Configure and deploy the React frontend.
+4. Deploy the Express backend to a compatible hosting service.
+5. Configure the frontend to use the deployed backend API.
+6. Configure persistent database storage.
+7. Test the complete application using the public website URL.
+
+**Important:** Deploying the frontend alone does not deploy the backend. The API and database must also be configured for online booking functionality.
 
 ---
 
-## ☁️ Deployment
+## 🔐 Security and Data Handling
 
-The planned deployment workflow is:
-
-1. Upload the project source code to GitHub.
-2. Import the repository into Vercel.
-3. Configure the frontend build settings.
-4. Deploy the frontend and obtain a public URL.
-5. Deploy the Node.js backend to a compatible hosting service.
-6. Configure the frontend to use the deployed backend API.
-7. Configure persistent database storage.
-8. Test the complete booking workflow online.
-
-**Important:** Deploying the frontend alone does not deploy the Express backend. Online booking functionality requires a reachable backend and correctly configured database storage.
+- Keep passwords, API keys, and secret credentials out of the repository.
+- Exclude `.env` files and local database files from GitHub.
+- Use environment variables for deployment-specific configuration.
+- Configure appropriate CORS rules for the deployed frontend.
+- Use a suitable persistent database solution for production hosting.
+- Do not store real payment credentials or sensitive identity documents in this demonstration project.
 
 ---
 
 ## ⚠️ Limitations
 
-- This is a demonstration project, not an official railway booking service.
-- Train information and availability may be sample or simulated data.
-- Payments are simulated; no real payment is processed.
-- Booking persistence depends on the backend and database configuration.
-- Authentication, production security, and official railway integrations may not be implemented.
-
----
-
-## 🔮 Future Enhancements
-
-- User registration and secure authentication.
-- Live train schedules and availability through an authorized API.
-- Integration with a legitimate payment gateway.
-- Improved booking history and cancellation workflows.
-- Email or SMS booking notifications.
-- Responsive design improvements.
-- Automated testing and enhanced error handling.
-- Production-ready database hosting and security.
-
----
-
-## ⚖️ Disclaimer
-
-RAIL LINK is an educational project developed for learning and demonstration purposes. It is not affiliated with Indian Railways or IRCTC and must not be used for
+- This project is intended for educational and demonstration purposes.
+- Train schedules
