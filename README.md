@@ -1,86 +1,232 @@
-# Rail Link — Segment Booking Demo
+# 🚆 RAIL LINK — Railway Reservation & Passenger Assistance System
 
-A responsive React/Vite frontend recreation inspired by the supplied Rail Link screenshots. It demonstrates a rail journey search, segment-seat concept, seat selection, passenger details, simulated payment, a demo ticket/PNR, booking history, assistance requests, profile, and a demo login page.
+**RAIL LINK** is a web-based railway reservation demo designed to simplify the train booking experience through an intuitive interface. It provides train search, seat selection, passenger details, simulated payment, booking management, and passenger assistance features.
 
-> **Important:** This is a portfolio/demo application. Train schedules, fares, availability, ticket numbers, and payment are illustrative only. It is not connected to Indian Railways or a live reservation system, and no real payment is taken. Do not enter real identity document numbers. Login and Google sign-in are local demo interactions, not production authentication.
+The project demonstrates how a modern web application can combine a React frontend, a Node.js backend, and an SQLite database.
 
-## Requirements
+---
 
-- Node.js LTS (includes npm)
-- Git (optional, for pushing to GitHub)
+## 📌 Table of Contents
 
-## Run locally
+- [Overview](#-overview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Running the Application](#-running-the-application)
+- [API Endpoints](#-api-endpoints)
+- [Deployment](#-deployment)
+- [Limitations](#-limitations)
+- [Future Enhancements](#-future-enhancements)
+- [Disclaimer](#-disclaimer)
 
-```bash
-npm install
-npm run dev
-```
+---
 
-Open the local URL Vite prints in your terminal, typically `http://localhost:5173`. On Windows, you can also double-click `start.bat`; it installs dependencies on the first run and starts the dev server.
+## 🎯 Overview
 
-## Build for deployment
+RAIL LINK is a college demonstration project that showcases a railway reservation workflow.
 
-```bash
-npm run build
-npm run preview
-```
+Users can explore available trains, select seats, enter passenger information, complete a simulated payment process, and view booking information.
 
-The production build is created in `dist/`.
+The application also includes passenger assistance and profile sections.
 
-## Features
+**Project goal:** To demonstrate frontend development, backend API integration, database operations, and the deployment workflow of a full-stack web application.
 
-- Responsive dark navy and cyan interface
-- Station, date, passenger count, and class selection
-- Demo train results and segment occupancy illustration
-- Seat map with coach tabs, filters, manual selection, and auto-allocation
-- Passenger manifest and validation
-- Simulated UPI, card, and net-banking payment states (no transaction)
-- Ticket with demo PNR and print-friendly layout
-- Local booking history, cancellation, and ticket view
-- Assistance request form and local request history
-- Profile statistics and mobile number saved locally
-- Demo login/create-account/forgot-password interface
-- `localStorage` persistence in the same browser
+---
 
-## Project structure
+## ✨ Features
+
+- 🔍 **Train Search** — Search for trains using journey details.
+- 💺 **Seat Selection** — Select available seats through an interactive interface.
+- 👤 **Passenger Details** — Enter passenger information during booking.
+- 💳 **Simulated Payment** — Demonstrate the payment stage without processing real transactions.
+- 🎫 **Booking Confirmation** — Display booking details and a PNR-style reference.
+- 📋 **My Bookings** — Access booking information.
+- ❌ **Booking Cancellation** — Demonstrate cancellation functionality where supported.
+- 🆘 **Passenger Assistance** — Access passenger assistance options.
+- 👤 **User Profile** — View the profile section.
+- 🗄️ **Database Integration** — Store and retrieve booking information through the backend.
+
+*Note: Feature availability depends on the current implementation and backend configuration.*
+
+---
+
+## 🛠️ Technology Stack
+
+| Technology | Purpose |
+|---|---|
+| React | User interface |
+| Vite | Frontend development and build tooling |
+| JavaScript | Application logic |
+| Node.js | Backend runtime |
+| Express.js | REST API |
+| SQLite | Database |
+| better-sqlite3 | SQLite database integration |
+| CORS | Cross-origin request handling |
+| GitHub | Source code management |
+| Vercel | Planned frontend deployment |
+
+---
+
+## 📁 Project Structure
 
 ```text
 rail-link-demo/
+├── public/
+├── src/
+│   ├── App.jsx
+│   └── ...
+├── server/
+│   └── index.js
 ├── index.html
 ├── package.json
+├── package-lock.json
 ├── vite.config.js
-├── README.md
-├── start.bat
 ├── .gitignore
-└── src/
-    ├── App.jsx
-    ├── main.jsx
-    └── styles.css
+└── README.md
 ```
 
-## Upload to GitHub
+*The exact files and folders may differ depending on your project configuration.*
 
-1. Create a new **empty** repository on https://github.com/new (for example, `rail-link-demo`). Do not add a README there if you already intend to push this project as-is.
-2. Open Command Prompt/PowerShell in this project folder.
-3. Run:
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Install the following software:
+
+- Node.js and npm
+- Git, if using Git commands
+- A modern web browser
+
+### 1. Clone the Repository
+
+Replace `YOUR_USERNAME` with your GitHub username.
 
 ```bash
-git init
-git add .
-git commit -m "Build Rail Link segment booking demo"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/rail-link-demo.git
-git push -u origin main
+git clone https://github.com/YOUR_USERNAME/rail-link.git
 ```
 
-Replace `YOUR-USERNAME` with your GitHub username. GitHub may prompt you to sign in through your browser or a credential manager. Never put passwords or tokens into source code.
+### 2. Open the Project Folder
 
-If Git says the remote already exists, inspect it with `git remote -v`; update it with `git remote set-url origin https://github.com/YOUR-USERNAME/rail-link-demo.git`.
+```bash
+cd rail-link
+```
 
-## Deploy (optional)
+### 3. Install Frontend Dependencies
 
-You can import the GitHub repository into Vercel or another static hosting provider. Use `npm run build` as the build command and `dist` as the output directory. This frontend-only demo does not require environment variables.
+```bash
+npm install
+```
 
-## Limitations and next steps
+### 4. Install Backend Dependencies
 
-The demo uses seeded client-side train information and local browser storage. A production railway product would require a secure backend, database, authentication, live train/seat data from an authorized source, a real payment provider, booking concurrency protection, and suitable privacy/security controls.
+```bash
+npm install express better-sqlite3 cors
+```
+
+---
+
+## ▶️ Running the Application
+
+### Start the Backend
+
+Open a terminal in the project root directory and run:
+
+```bash
+node server/index.js
+```
+
+The backend should start at:
+
+```text
+http://localhost:3000
+```
+
+### Start the Frontend
+
+Open a second terminal in the same project directory and run:
+
+```bash
+npm run dev
+```
+
+Open the local address displayed in your terminal, typically:
+
+```text
+http://localhost:5173
+```
+
+Vite may use another port if the default port is occupied.
+
+### Check Backend Health
+
+Open the following endpoint in your browser:
+
+```text
+http://localhost:3000/api/health
+```
+
+A successful response should indicate that the backend is running.
+
+---
+
+## 🔌 API Endpoints
+
+The backend provides the following endpoints in the current implementation.
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/health` | Check backend status |
+| GET | `/api/bookings` | Retrieve saved bookings |
+| POST | `/api/bookings` | Create a booking |
+| PATCH | `/api/bookings/:pnr/cancel` | Cancel a booking |
+
+These endpoints require the backend to be running. The booking endpoints accept and return JSON data.
+
+---
+
+## ☁️ Deployment
+
+The planned deployment workflow is:
+
+1. Upload the project source code to GitHub.
+2. Import the repository into Vercel.
+3. Configure the frontend build settings.
+4. Deploy the frontend and obtain a public URL.
+5. Deploy the Node.js backend to a compatible hosting service.
+6. Configure the frontend to use the deployed backend API.
+7. Configure persistent database storage.
+8. Test the complete booking workflow online.
+
+**Important:** Deploying the frontend alone does not deploy the Express backend. Online booking functionality requires a reachable backend and correctly configured database storage.
+
+---
+
+## ⚠️ Limitations
+
+- This is a demonstration project, not an official railway booking service.
+- Train information and availability may be sample or simulated data.
+- Payments are simulated; no real payment is processed.
+- Booking persistence depends on the backend and database configuration.
+- Authentication, production security, and official railway integrations may not be implemented.
+
+---
+
+## 🔮 Future Enhancements
+
+- User registration and secure authentication.
+- Live train schedules and availability through an authorized API.
+- Integration with a legitimate payment gateway.
+- Improved booking history and cancellation workflows.
+- Email or SMS booking notifications.
+- Responsive design improvements.
+- Automated testing and enhanced error handling.
+- Production-ready database hosting and security.
+
+---
+
+## ⚖️ Disclaimer
+
+RAIL LINK is an educational project developed for learning and demonstration purposes. It is not affiliated with Indian Railways or IRCTC and must not be used for
