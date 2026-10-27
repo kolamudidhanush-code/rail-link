@@ -117,10 +117,8 @@ Install:
 
 ### 1. Clone the Repository
 
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username.
-
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/rail-link.git
+git clone https://github.com/kolamudidhanush-code/rail-link.git
 ```
 
 ### 2. Navigate to the Project Folder
@@ -232,4 +230,60 @@ Planned deployment workflow:
 ## ⚠️ Limitations
 
 - This project is intended for educational and demonstration purposes.
-- Train schedules
+- Train schedules and availability may use sample or simulated data.
+- The payment workflow is simulated and does not process real payments.
+- Online booking functionality depends on the deployment and database configuration.
+- Official railway system integration is not implied.
+
+---
+
+## 🔮 Future Enhancements
+
+- Secure user authentication and authorization.
+- Integration with authorized train information APIs.
+- Legitimate payment gateway integration.
+- Improved booking history and cancellation workflows.
+- Email or SMS booking notifications.
+- Responsive design improvements.
+- Automated testing and error handling.
+- Production-ready database hosting and monitoring.
+
+---
+
+## 🎓 Learning Outcomes
+
+This project demonstrates practical concepts in:
+
+- React component development.
+- Frontend and backend integration.
+- REST API design.
+- Database operations using SQLite.
+- JavaScript application development.
+- Source code management using GitHub.
+- Web application deployment.
+
+---
+
+## 👨‍💻 Project Information
+
+| Field | Details |
+|---|---|
+| Project Name | RAIL LINK |
+| Category | Full-Stack Web Development |
+| Frontend | React + Vite |
+| Backend | Node.js + Express.js |
+| Database | SQLite |
+| Repository | GitHub |
+| Deployment | In Progress |
+
+---
+
+## ⚖️ Disclaimer
+
+RAIL LINK is an independent educational project. It is not affiliated with Indian Railways or IRCTC and is not intended for actual railway reservations or real financial transactions.
+
+---
+
+### ⭐ Thank You
+
+Thank you for visiting the RAIL LINK project repository!
